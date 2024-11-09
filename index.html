@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlantis</title>
+    <link rel="icon" href="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96" type="image/webp">
+    <meta name="theme-color" content="#e03326">
+    <meta property="og:title" content="Atlantis (1# UD)">
+    <meta property="og:description" content="Unleash havoc with the best scripting experience.">
+    <meta property="og:image" content="https://cdn.discordapp.com/icons/1150872929731620987/e07490a56175793f93a84fcb5376bec2.webp?size=96">
+    <meta property="og:url" content="https://getsatlantis.vercel.app">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:site_name" content="Atlantis">
+    <meta name="twitter:image:alt" content="Atlantis Logo">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+  <style>
+    body {
+        background-color: #000;
+        color: #e0e0e0;
+        font-family: 'Inter', sans-serif;
+        margin: 0;
+        overflow-x: hidden;
+        scrollbar-width: thin;
+        scrollbar-color: #ff0040 #222;
+    }
+
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #222;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #ff0040;
+        border-radius: 4px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        padding: 8px 20px;
+        border-radius: 20px;
+        width: 80%;
+        margin: 20px auto;
+        justify-content: space-between;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-logo img {
+        width: 60px;
+        height: 60px;
+        margin-right: 8px;
+    }
+
+    .navbar-logo-text {
+        font-family: 'Orbitron', sans-serif;
+        font-size: 1.5rem;
+        color: #ff0040;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+    }
+
+    .navbar-links {
+        display: flex;
+        align-items: center;
+    }
+
+    .navbar-links a {
+        color: #ffffff;
+        margin-right: 20px;
+        font-weight: 600;
+        transition: color 0.3s;
+        cursor: pointer;
+    }
+
+    .navbar-links a:hover {
+        color: #ff0040;
+    }
+
+    .discord-button {
+        background-color: #7289da;
+        color: #ffffff;
+        padding: 8px 15px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .discord-button:hover {
+        background-color: #5a78f1;
+        transform: scale(1.05);
+    }
+
+    .update-banner {
+        position: absolute;
+        top: 70px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 8px 20px;
+        background: rgba(255, 0, 0, 0.1);
+        color: #fff;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2);
+        animation: banner-glow 3s ease-in-out infinite alternate;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .update-banner .close-btn {
+        margin-left: 10px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    @keyframes banner-glow {
+        from { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.2); }
+        to { box-shadow: 0 4px 20px rgba(255, 0, 0, 0.4); }
+    }
+
+    .hero {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 80px 20px;
+        gap: 20px;
+        position: relative;
+    }
+
+    .hero-content {
+        max-width: 500px;
+        text-align: left;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: #ffffff;
+        line-height: 1.2;
+    }
+
+    .hero h1 span {
+        color: #ff0040;
+        text-shadow: 0px 0px 10px #ff0040;
+    }
+
+    .hero p {
+        color: #e0e0e0;
+        font-size: 1rem;
+        margin-top: 15px;
+    }
+
+    .hero button {
+        margin-top: 20px;
+        padding: 12px 30px;
+        font-size: 1rem;
+        border-radius: 30px;
+        background: rgba(255, 0, 0, 0.3);
+        border: 1px solid #666;
+        color: #fff;
+        transition: all 0.3s;
+    }
+
+    .hero button:hover {
+        background: rgba(255, 0, 0, 0.5);
+        border-color: rgba(255, 0, 0, 0.7);
+    }
+
+    .hero-image {
+        width: 650px;
+        height: 350px;
+        background-image: url('AtlantisUI.png');
+        background-size: cover;
+        background-position: center;
+        border-radius: 20px;
+        transition: transform 0.3s, box-shadow 0.3s;
+        transform-style: preserve-3d;
+    }
+
+    .hero-image:hover {
+        box-shadow: 0px 4px 15px rgba(255, 0, 0, 0.5);
+        transform: rotateY(calc(var(--mouse-x, 0) * 15deg)) rotateX(calc(var(--mouse-y, 0) * -15deg));
+    }
+
+    .red-divider {
+        width: 80%;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1) 20%, rgba(255, 0, 0, 1) 80%, rgba(255, 0, 0, 0));
+        margin: 0 auto 40px;
+    }
+
+    .cta {
+        background: linear-gradient(to bottom, #1a1a1a, #000);
+        box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        padding: 50px 20px;
+        margin: 40px auto;
+        max-width: 700px;
+        border-radius: 30px;
+        color: #e0e0e0;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .cta h2 {
+        font-size: 2rem;
+        font-family: 'Raleway', sans-serif;
+        color: #ff0040;
+        font-weight: 900;
+        text-shadow: 0px 0px 5px #ff0040;
+    }
+
+    .cta p {
+        font-size: 1.125rem;
+        color: #cccccc;
+        margin-top: 10px;
+        margin-bottom: 24px;
+    }
+
+    .cta button {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid #666;
+        padding: 12px 30px;
+        font-size: 1rem;
+        color: #fff;
+        border-radius: 30px;
+        transition: all 0.3s;
+    }
+
+    .cta button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: scale(1.05);
+    }
+
+    .features {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        margin: 40px auto;
+        padding: 20px;
+    }
+
+    .feature-card {
+        width: 300px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 15px;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .feature-card h3 {
+        color: #ff0040;
+        font-size: 1.25rem;
+        font-family: 'Raleway', sans-serif;
+        margin-bottom: 10px;
+    }
+
+    .showcase-content {
+        width: 600px;
+        height: 350px;
+        background-color: #333;
+        border-radius: 15px;
+        overflow: hidden;
+        border: 1px solid #666;
+    }
+
+    .video-player {
+        width: 100%;
+        height: 100%;
+    }
+
+    .glow-star, .glow-sphere {
+        position: absolute;
+        border-radius: 50%;
+        pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="navbar-logo">
+      <img src="logos.png" alt="Logo">
+      <span class="navbar-logo-text">ATLANTIS</span>
+    </div>
+    <div class="navbar-links">
+      <a onclick="smoothScrollTo('features')">Features</a>
+      <a onclick="smoothScrollTo('showcase')">Showcases</a>
+      <div class="discord-button"><i class="fab fa-discord"></i> Discord</div>
+    </div>
+  </nav>
+
+  <div class="update-banner">
+    <span>Website has been updated with new features.</span>
+    <span class="close-btn" onclick="this.parentElement.style.display='none'">✕</span>
+  </div>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The Most Advanced <span>Roblox Executor</span> on the Market</h1>
+      <p>Experience the highest level of undetected Roblox and CS2 exploits, offering unbeatable stability and features for your needs.</p>
+      <button>Discover Plans</button>
+    </div>
+    <div class="hero-image"></div>
+  </section>
+
+  <div class="red-divider"></div>
+
+  <section class="cta">
+    <h2>Start Dominating Large Games Today</h2>
+    <p>Join Atlantis and unlock powerful game scripts with top-notch security.</p>
+    <button>Get Started</button>
+  </section>
+
+  <section id="features" class="features">
+    <div class="feature-card">
+      <h3>Hyperion Bypass</h3>
+      <p>Our Exploit Provides a good Hyperion Bypass to ensure you play without detection!</p>
+    </div>
+    <div class="feature-card">
+      <h3>Quality of Execution</h3>
+      <p>The Exploit is carefully coded to fit your needs with high execution power!</p>
+    </div>
+    <div class="feature-card">
+      <h3>Cool Discord Community!</h3>
+      <p>Join our Discord to hang out and connect with others!</p>
+    </div>
+  </section>
+
+  <section id="showcase" class="showcase">
+    <div class="showcase-content">
+      <video class="video-player" controls>
+        <source src="https://cdn.discordapp.com/attachments/1247532284912074792/1295442248544288799/The_Best_keyless_free_Executer_Called_Atlantis_Roblox_1.mp4?ex=670eaa1c&is=670d589c&hm=207f9e611dc8cee4898222a6335f83fec710b194c5934c4f6535ff61fbf8b6f2&" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </section>
+
+  <script>
+    document.querySelector('.hero-image').addEventListener('mousemove', function(e) {
+        const rect = e.target.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        e.target.style.setProperty('--mouse-x', `${x / rect.width - 0.5}`);
+        e.target.style.setProperty('--mouse-y', `${y / rect.height - 0.5}`);
+    });
+
+    // Smooth scroll function
+    function smoothScrollTo(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Background effect with white glowing stars inside the viewport
+    function addBackgroundElements(elementClass, numElements) {
+        const body = document.body;
+        for (let i = 0; i < numElements; i++) {
+            const element = document.createElement('div');
+            element.className = elementClass;
+            element.style.left = `${Math.random() * 100}vw`;
+            element.style.top = `${Math.random() * window.innerHeight}px`;
+            if (elementClass === 'glow-star') {
+                element.style.width = `${Math.random() * 3 + 1}px`;
+                element.style.height = element.style.width;
+                element.style.background = 'rgba(255, 255, 255, 0.6)';
+                element.style.filter = 'blur(1px)';
+            } else if (elementClass === 'glow-sphere') {
+                element.style.width = `${Math.random() * 150 + 50}px`;
+                element.style.height = element.style.width;
+                element.style.background = 'rgba(255, 255, 255, 0.2)';
+                element.style.filter = 'blur(50px)';
+            }
+            body.appendChild(element);
+        }
+    }
+
+    addBackgroundElements('glow-star', 70);
+    addBackgroundElements('glow-sphere', 10);
+  </script>
+</body>
+</html>
